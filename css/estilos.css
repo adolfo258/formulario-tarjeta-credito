@@ -1,0 +1,269 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #ddeefc;
+	font-family: 'Lato', sans-serif;
+}
+
+.contenedor{
+	width: 90%;
+	max-width: 1000px;
+	padding: 40px 20px;
+	 margin: auto;
+	 display: flex;
+	 flex-direction: column;
+	 align-items: center;
+}
+
+.tarjeta{
+	width: 100%;
+	max-width: 550px;
+	position: relative;
+	color: #fff;
+	transition: .3s ease all;
+	transform: rotateY(0deg);
+	transform-style: preserve-3d;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.tarjeta.active{
+	transform: rotateY(180deg);
+}
+
+.tarjeta > div{
+	padding: 30px;
+	border-radius: 15px;
+	min-height: 315px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	box-shadow: 0 10px 10px rgba(90, 116, 148, 0.3);
+}
+
+.delantera{
+	background: url(/img/bg-tarjeta/bg-tarjeta-01.jpg);
+	background-size: cover;
+}
+
+.delantera .logo-marca{
+	text-align: right;
+	min-height: 50px;
+}
+
+.logo-marca img{
+	max-width: 80px;
+}
+
+.chip{
+	max-width: 50px;
+}
+
+.delantera .label{
+	font-size: 16px;
+	color: #7d8994;
+	margin-bottom: 5px;
+}
+
+.delantera .numero,
+.delantera .nombre,
+.delantera .expiracion{
+	color: #fff;
+	font-size: 22px;
+	text-transform: uppercase;
+}
+
+.flexbox{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
+/* -------------------TARJETA TRASERA----------------- */
+
+.trasera{
+	background: url(/img/bg-tarjeta/bg-tarjeta-01.jpg);
+	background-size: cover;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	transform: rotateY(180deg);
+}
+
+.trasera .barra-magnetica{
+	background-color: #444;
+	height: 40px;
+	position: absolute;
+	top: 25px;
+	left: 0;
+	width: 100%;
+}
+
+.trasera .datos{
+	margin-top: 60px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.trasera .label {
+	margin-bottom: 5px;
+}
+
+
+.trasera .firma{
+	width: 340px;
+	height: 40px;
+	background: repeating-linear-gradient(skyblue 0, skyblue 5px, orange 5px, orange 10px);
+}
+
+.trasera .ccv{
+	padding: 10px;
+	text-align: center;
+	color: black;
+	background-color: white;
+	height: 40px;
+	width: 100px;
+}
+
+.trasera .firma p{
+	color: black;
+	 line-height: 40px;
+	 font-family: 'Liu Jian Mao Cao', cursive;
+	 font-size: 30px;
+	 padding: 0 10px;
+	 text-transform: capitalize;
+
+}
+
+.trasera .leyenda{
+	font-size: 14px;
+}
+
+.trasera .link-banco{
+	color: white;
+}
+
+/* -------------BOTON--------------- */
+
+.btn-abrir{
+	color: #fff;
+	font-size: 30px;
+	background: #2364d2;
+	width: 50px;
+	height: 50px;
+	position: relative;
+	top: -25px;
+	z-index: 3;
+	border-radius: 100%;
+	cursor: pointer;
+	transition: all .2s ease;
+	border:none;
+	box-shadow: -5px 4px 8px rgba(24, 56, 182, 0.4);
+	line-height: 20px;
+	outline: none;
+}
+
+.btn-abrir:hover{
+	background: #1850b1;
+}
+
+.btn-abrir.active{
+	transform: rotate(45deg);
+}
+
+/* FORMULARIO */
+
+.formulario-tarjeta{
+	background: #fff;
+	width: 100%;
+	max-width: 700px;
+	padding: 150px 30px 30px 30px;
+	border-radius: 10px;
+	position: relative;
+	top: -150px;
+	z-index: 1;
+	clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+	transition: clip-path .3s ease-out;
+}
+
+.formulario-tarjeta.active{
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+ .formulario-tarjeta label{
+	 display: block;
+	 color: #7d8994;
+	 margin-bottom: 5px;
+	 font-size: 16px;
+ }
+
+ .formulario-tarjeta input,
+ .formulario-tarjeta select,
+ .btn-enviar-todo{
+	border: 2px solid #ced6e0;
+	font-size: 18px;
+	height: 50px;
+	width: 100%;
+	padding: 5px 12px;
+	border-radius: 5px;
+	outline: none;
+ }
+
+ .formulario-tarjeta input:hover,
+ .formulario-tarjeta select:hover{
+	 border: 2px solid #93bded ;
+ }
+ .formulario-tarjeta input:focus,
+ .formulario-tarjeta select:focus{
+	 border: 2px solid #93bded ;
+ }
+ .formulario-tarjeta input{
+	 margin-bottom: 20px;
+ }
+
+ .flex-box{
+	 display: flex;
+	 justify-content: space-between;
+ }
+
+ .expira{
+	 width: 100%;
+ }
+ .ccv{
+	 min-width: 100px;
+ }
+
+ .grupo-select{
+	 width: 100%;
+	 margin-right: 15px;
+	 position: relative;
+ }
+
+ .grupo-select select{
+	 -webkit-appearance: none;
+ }
+
+ .grupo-select i{
+	 position: absolute;
+	 font-size: 20px;
+	 right: 10%;
+	 top: 30%;
+	 color: #ced6e0;
+ }
+
+
+ .btn-enviar-todo{
+	 border: none;
+	 font-size: 22px;
+	 color: #fff;
+	 background-color: #2364d2;
+	 cursor: pointer;
+ }
+
+ .btn-enviar-todo:hover{
+	 background-color: #1850b1;
+ }
